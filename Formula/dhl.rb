@@ -7,11 +7,11 @@ class Dhl < Formula
   on_macos do
     on_arm do
       url "https://github.com/mtib/dhl/releases/download/latest/dhl-aarch64-apple-darwin.tar.gz"
-      sha256 "f4dbcfcb604dd7056c9cd6f505ddfed246af2ee75494c820bc4c308c0b268cae"
+      sha256 "720163e979420c61a28ffabd106d4dfab51ace05d54ed79a08174692bba5ea23"
     end
     on_intel do
       url "https://github.com/mtib/dhl/releases/download/latest/dhl-x86_64-apple-darwin.tar.gz"
-      sha256 "79ec73df00de686e675c6eed4e71e242c767302d4e514ae17c84b1b332d24bb3"
+      sha256 "c3e7945604159ef849755cc5d883e066cc3a952d018a5d0d925cb927d9c1c2eb"
     end
   end
 
