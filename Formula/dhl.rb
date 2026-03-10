@@ -1,17 +1,17 @@
 class Dhl < Formula
   desc "Git worktree workspace manager"
   homepage "https://github.com/mtib/dhl"
-  version "0.1.0-20260310-7ef13f9"
+  version "0.1.0-20260310-144c8cc"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/mtib/dhl/releases/download/v0.1.0-20260310-7ef13f9/dhl-aarch64-apple-darwin.tar.gz"
-      sha256 "e969a706d38117176667d4f54c4397f17c08f7a7de770a45fd1cdfda3f5abec0"
+      url "https://github.com/mtib/dhl/releases/download/v0.1.0-20260310-144c8cc/dhl-aarch64-apple-darwin.tar.gz"
+      sha256 "bc273243f79ea6865f2393ddec00ddff2e2e3223cd91955039f5b3c295107da6"
     end
     on_intel do
-      url "https://github.com/mtib/dhl/releases/download/v0.1.0-20260310-7ef13f9/dhl-x86_64-apple-darwin.tar.gz"
-      sha256 "ae406e77df9e8c37274f3f345f47fcccf11fb4bce8aefd34394ad0aeb245cea5"
+      url "https://github.com/mtib/dhl/releases/download/v0.1.0-20260310-144c8cc/dhl-x86_64-apple-darwin.tar.gz"
+      sha256 "22c475fed470787a8b03d9438ca64190619ee1c593ff2bf41f068bce7eb19ad4"
     end
   end
 
