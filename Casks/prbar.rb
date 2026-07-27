@@ -1,9 +1,9 @@
 cask "prbar" do
-  version "0.1.2"
-  sha256 "82bb8a7ee3944a5316886aa57e8047b4fc4ca0d917c090a3ff5fb366027c06e5"
+  version "0.1.3"
+  sha256 "7eb2d5644a808f6b36049972598bf6802008ddda7258ee600f82368cd2b97545"
 
   # A release asset rather than a source zipball: .app bundles ship as ditto zips so their
-  # metadata survives the round trip. `brew style` flags this; it's the wrong call here.
+  # metadata survives the round trip.
   url "https://github.com/mtib/prbar/releases/download/v#{version}/prbar.zip",
       verified: "github.com/mtib/prbar/"
   name "prbar"
