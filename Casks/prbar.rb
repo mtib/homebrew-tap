@@ -23,12 +23,13 @@ cask "prbar" do
 
   caveats <<~EOS
     prbar is ad-hoc signed rather than notarized, so Gatekeeper will refuse to launch it
-    unless it was installed with --no-quarantine:
+    until you clear the download's quarantine flag:
 
-      brew install --cask --no-quarantine mtib/tap/prbar
+      xattr -dr com.apple.quarantine /Applications/prbar.app
+      open -a /Applications/prbar.app
 
-    Launch it once with `open -a prbar` and allow notifications when macOS asks. It
-    authenticates through the GitHub CLI by default; run `gh auth login` if you haven't, or
-    add a personal access token under Settings in the app.
+    Allow notifications when macOS asks. prbar authenticates through the GitHub CLI by
+    default; run `gh auth login` if you haven't, or add a personal access token under
+    Settings in the app.
   EOS
 end

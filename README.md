@@ -29,10 +29,11 @@ macOS menu bar app for the GitHub pull requests waiting on your review — direc
 draft, with one notification per newly-arrived request.
 
 ```sh
-brew install --cask --no-quarantine mtib/tap/prbar
+brew install --cask mtib/tap/prbar
+xattr -dr com.apple.quarantine /Applications/prbar.app
 ```
 
-`--no-quarantine` is required because the app is ad-hoc signed rather than notarized. The cask
+The `xattr` step is required because the app is ad-hoc signed rather than notarized. The cask
 tracks the latest release, so it never needs a version bump.
 
 See [mtib/prbar](https://github.com/mtib/prbar) for full documentation.
