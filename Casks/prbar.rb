@@ -4,11 +4,10 @@ cask "prbar" do
   version :latest
   sha256 :no_check
 
-  # rubocop:disable Cask/Url -- a release asset, not a source zipball; .app bundles ship as
-  # ditto zips so their metadata survives the round trip.
+  # A release asset rather than a source zipball: .app bundles ship as ditto zips so their
+  # metadata survives the round trip. `brew style` flags this; it's the wrong call here.
   url "https://github.com/mtib/prbar/releases/latest/download/prbar.zip",
       verified: "github.com/mtib/prbar/"
-  # rubocop:enable Cask/Url
   name "prbar"
   desc "Menu bar app for the GitHub pull requests waiting on your review"
   homepage "https://github.com/mtib/prbar"
