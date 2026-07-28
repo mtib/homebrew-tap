@@ -1,6 +1,6 @@
 cask "prbar" do
-  version "0.1.4"
-  sha256 "b48d548f3a789d1c2d04150db1dfde2dc618e83e47ac9c83e65fb454c9a3b901"
+  version "0.1.5"
+  sha256 "3c30591638bf56e1f988cf5be94a638320e96ce9c81aebf52fe4c7b263fb1a6d"
 
   # A release asset rather than a source zipball: .app bundles ship as ditto zips so their
   # metadata survives the round trip.
@@ -19,22 +19,28 @@ cask "prbar" do
 
   app "prbar.app"
 
+  # Ad-hoc signed rather than notarized, so Gatekeeper refuses to launch the download while its
+  # quarantine flag is set. Clearing it here is what makes `brew install` a single step; the
+  # trust boundary is the tap you already added.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/prbar.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/prbar",
     "~/Library/Preferences/dev.mtib.prbar.plist",
   ]
 
   caveats <<~EOS
-    prbar is ad-hoc signed rather than notarized, so Gatekeeper will refuse to launch it
-    until you clear the download's quarantine flag:
+    Launch it with `open -a prbar` and allow notifications when macOS asks.
+
+    prbar authenticates through the GitHub CLI by default; run `gh auth login` if you
+    haven't, or add a personal access token under Settings in the app.
+
+    This build is ad-hoc signed rather than notarized, so the cask clears its own quarantine
+    flag on install. If you download prbar.zip from GitHub by hand instead, run:
 
       xattr -dr com.apple.quarantine /Applications/prbar.app
-      open -a /Applications/prbar.app
-
-    Repeat the xattr step after every upgrade — a fresh download is quarantined again.
-
-    Allow notifications when macOS asks. prbar authenticates through the GitHub CLI by
-    default; run `gh auth login` if you haven't, or add a personal access token under
-    Settings in the app.
   EOS
 end
