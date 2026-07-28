@@ -29,12 +29,14 @@ macOS menu bar app for the GitHub pull requests waiting on your review — direc
 draft, with one notification per newly-arrived request.
 
 ```sh
+brew trust --cask mtib/tap/prbar
 brew install --cask mtib/tap/prbar
-xattr -dr com.apple.quarantine /Applications/prbar.app
+open -a prbar
 ```
 
-The `xattr` step is required because the app is ad-hoc signed rather than notarized. The cask
-tracks the latest release, so it never needs a version bump.
+`brew trust` is required once per machine — Homebrew 6+ silently ignores casks from untrusted
+third-party taps, so without it the install looks like the cask doesn't exist. The app is
+ad-hoc signed rather than notarized, so the cask clears its own quarantine flag on install.
 
 See [mtib/prbar](https://github.com/mtib/prbar) for full documentation.
 
