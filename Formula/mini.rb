@@ -1,16 +1,16 @@
 class Mini < Formula
   desc "CLI for managing tmux sessions on a remote machine via SSH"
   homepage "https://github.com/mtib/mini"
-  version "1.1.0.20260812.7"
+  version "1.1.0.20260812.8"
 
   on_macos do
     on_arm do
-      url "https://github.com/mtib/mini/releases/download/v1.1.0-20260812-2348ce3/mini-aarch64-apple-darwin.tar.gz"
-      sha256 "d5f2c98000ab117e230eec29761390fc051526e3b22a754c616e8dee22d61d00"
+      url "https://github.com/mtib/mini/releases/download/v1.1.0-20260812-aa18f11/mini-aarch64-apple-darwin.tar.gz"
+      sha256 "48030d78a9b7ec0f73493c884a24417097bbbcb1e42e203de9ec90df5cae13ed"
     end
     on_intel do
-      url "https://github.com/mtib/mini/releases/download/v1.1.0-20260812-2348ce3/mini-x86_64-apple-darwin.tar.gz"
-      sha256 "a9904a92f29a56b7ad62ce9186a20902694cf30ff536d88c7ea630698aabc15b"
+      url "https://github.com/mtib/mini/releases/download/v1.1.0-20260812-aa18f11/mini-x86_64-apple-darwin.tar.gz"
+      sha256 "0932cb37ad5889efb99c050a08f6a5359f8c53c179e828f890a0d0194e2a012c"
     end
   end
 
