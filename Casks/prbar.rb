@@ -1,11 +1,10 @@
 cask "prbar" do
-  version "0.1.7"
-  sha256 "43de40762d1a31fe55d17ddb9b681fc6ac08c5c14d3bfafacc3c5dc4024c9540"
+  version "0.1.8"
+  sha256 "8782c094a3de2bfba3236370c276b7949523d99a5fea305dc0a3d9682a0b5f6e"
 
   # A release asset rather than a source zipball: .app bundles ship as ditto zips so their
   # metadata survives the round trip.
-  url "https://github.com/mtib/prbar/releases/download/v#{version}/prbar.zip",
-      verified: "github.com/mtib/prbar/"
+  url "https://github.com/mtib/prbar/releases/download/v#{version}/prbar.zip"
   name "prbar"
   desc "Menu bar app for the GitHub pull requests waiting on your review"
   homepage "https://github.com/mtib/prbar"
@@ -22,9 +21,9 @@ cask "prbar" do
   # Ad-hoc signed rather than notarized, so Gatekeeper refuses to launch the download while its
   # quarantine flag is set. Clearing it here is what makes `brew install` a single step; the
   # trust boundary is the tap you already added.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/prbar.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/prbar.app"]
   end
 
   zap trash: [
