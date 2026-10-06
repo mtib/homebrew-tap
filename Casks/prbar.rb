@@ -1,6 +1,6 @@
 cask "prbar" do
-  version "0.1.11"
-  sha256 "be9b9275b53a317ca0545d59235fcd25fcc02298b38064ef8af6e5db4f3c0bce"
+  version "0.1.12"
+  sha256 "e24cdc5167e52334ccc159f18bf508355e345c377d2f6c313b53e00d40e7d4c2"
 
   # A release asset rather than a source zipball: .app bundles ship as ditto zips so their
   # metadata survives the round trip.
